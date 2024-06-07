@@ -1,0 +1,147 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.heading-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+h2 {
+  border-bottom: 2px solid #5d5cff;
+  padding: 5px 0px;
+}
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-3-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-1-col {
+  grid-template-columns: 1fr;
+}
+
+.border {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.mb-2 {
+  margin-bottom: 10px;
+}
+
+.mb-4 {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #5d5cff;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6868fa;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
+  margin-bottom: 10px;
+}
+
+.charge-summary {
+  background-color: #dfdfff;
+  padding: 20px 10px;
+  border-radius: 8px;
+  border: 1px solid #5d5cff;
+}
+
+.charge-summary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.charge-summary th,
+.charge-summary td {
+  padding: 10px;
+  text-align: left;
+  text-wrap: nowrap;
+}
+.charge-summary th {
+  background-color: #dfdfff;
+  border-bottom: 1px solid #5d5cff;
+}
+/* .body-border{
+  border-top: 1px solid red;
+} */
+
+.charge-summary .total {
+  font-weight: bold;
+}
+
+.charge-summary .total-value {
+  font-weight: bold;
+  text-align: right;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 750px;
+  padding: 0px 10px;
+}
+.column-1,
+.column-2 {
+  padding: 0px 10px;
+}
+.duration {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.duration span {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0 10px 35px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
