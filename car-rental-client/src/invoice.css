@@ -1,0 +1,21 @@
+.company-header{
+      display: flex;
+      flex-direction: row;
+      width: 90%;
+      justify-content: space-between;
+      align-items: center;
+}
+.information{
+      display: flex;
+      flex-direction: row;
+      width: 90%;
+      justify-content: space-between;
+      align-items: center;
+}
+.charge-summary-table td{
+      text-align: start;
+}
+.total-tr{
+      font-weight: bold;
+      font-size: large;
+}

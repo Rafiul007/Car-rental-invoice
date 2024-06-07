@@ -30,6 +30,7 @@ function App() {
     rentalTax: 11.5,
     total: 0,
   });
+
   const [dailyCharge, setDailyCharge] = useState(0);
   const [weeklyCharge, setWeeklyCharge] = useState(0);
   const [carsList, setCarsList] = useState([]);
@@ -66,20 +67,16 @@ function App() {
       const collisionDamageWaiverCharge = formData.collisionDamageWaiver
         ? 9.0
         : 0;
-      const liabilityInsuranceCharge = formData.liabilityInsurance
-        ? 15.0
-        : 0;
+      const liabilityInsuranceCharge = formData.liabilityInsurance ? 15.0 : 0;
 
       let subtotal =
         totalBeforeTaxAndInsurance +
         collisionDamageWaiverCharge +
         liabilityInsuranceCharge;
-        const discount = parseFloat(formData.discount) || 0;
-        subtotal = subtotal - discount;
+      const discount = parseFloat(formData.discount) || 0;
+      subtotal = subtotal - discount;
 
-      const rentalTaxCharge = formData.rentalTax
-        ? subtotal * (11.5 / 100)
-        : 0;
+      const rentalTaxCharge = formData.rentalTax ? subtotal * (11.5 / 100) : 0;
 
       const total = subtotal + rentalTaxCharge;
 
@@ -287,44 +284,45 @@ function App() {
                       />
                     </div>
                   </div>
-                </div>
-                {/* Additional Charges */}
-                <div className="additional-charges details">
-                  <h2 className="text-xl mb-2">Additional Charges</h2>
-                  <div className="checkbox-group border">
-                    <label className="checkbox">
-                      <input
-                        type="checkbox"
-                        name="collisionDamageWaiver"
-                        checked={formData.collisionDamageWaiver}
-                        onChange={handleInputChange}
-                      />
-                      Collision Damage Waiver ($9.00)
-                    </label>
-                    <label className="checkbox">
-                      <input
-                        type="checkbox"
-                        name="liabilityInsurance"
-                        checked={formData.liabilityInsurance}
-                        onChange={handleInputChange}
-                      />
-                      Liability Insurance ($15.00)
-                    </label>
-                    <label className="checkbox">
-                      <input
-                        type="checkbox"
-                        name="rentalTax"
-                        checked={formData.rentalTax}
-                        onChange={handleInputChange}
-                      />
-                      Rental Tax (11.5%)
-                    </label>
+                  <div className="insurance details">
+                    {/* Insurance Options */}
+                    <h2 className="text-xl mb-2">Insurance Options</h2>
+                    <div className="border">
+                      <div className="checkbox">
+                        <input
+                          type="checkbox"
+                          name="collisionDamageWaiver"
+                          checked={formData.collisionDamageWaiver}
+                          onChange={handleInputChange}
+                        />
+                        <label>Collision Damage Waiver ($9.00/day)</label>
+                      </div>
+                      <div className="checkbox">
+                        <input
+                          type="checkbox"
+                          name="liabilityInsurance"
+                          checked={formData.liabilityInsurance}
+                          onChange={handleInputChange}
+                        />
+                        <label>Liability Insurance ($15.00/day)</label>
+                      </div>
+                      <div className="checkbox">
+                        <input
+                          type="checkbox"
+                          name="rentalTax"
+                          checked={formData.rentalTax}
+                          onChange={handleInputChange}
+                        />
+                        <label>Rental Tax (11.5%)</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </form>
         </div>
+
         {/* Charges Summary */}
         <div className="charges-summary details">
           <h2 className="text-xl mb-2">Charges Summary</h2>
@@ -394,6 +392,7 @@ function App() {
           </div>
         </div>
       </div>
+
       {/* Printable Invoice */}
       <div style={{ display: "none" }}>
         <PrintableInvoice
